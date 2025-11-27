@@ -1,0 +1,17 @@
+1. Create user
+curl -X POST http://localhost:3001/api/v1/user/signup \
+  -H "Content-Type: application/json" \
+  -d '{"email": "new_user@airline.com", "password": "MySecurePassword123"}'
+
+2. Test signin(get token)
+curl -X POST http://localhost:3001/api/v1/user/signin \
+  -H "Content-Type: application/json" \
+  -d '{"email": "admin@airline.com", "password": "Admin123"}'
+
+3.Token verification(isAuthenticated)
+curl -v http://localhost:3001/api/v1/user/isAuthenticated \
+  -H "x-access-token: <PASTE_YOUR_JWT_HERE>"
+
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJuZXdfdXNlckBhaXJsaW5lLmNvbSIsImlhdCI6MTc2NDE4MzU5MywiZXhwIjoxNzY0MTg3MTkzfQ.C-zjRRxBhAT4SWlM_7y71PUO2HhhNW_utr5L1R7geb0
