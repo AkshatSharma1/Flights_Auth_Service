@@ -14,6 +14,16 @@
             "date": 1764181945243,
             "name": "E:\\Projects\\airline-booking-system\\auth-service\\logs\\application-2025-11-27.log",
             "hash": "335bb0460aa14bea04243d6475930d34fe37f2a84a6f2a7a902a5197d2766e39"
+        },
+        {
+            "date": 1764871089699,
+            "name": "E:\\Projects\\airline-booking-system\\auth-service\\logs\\application-2025-12-04.log",
+            "hash": "b1524583b027c43d290247f35013e0abd2d103dec4ba74666a79501e643d333f"
+        },
+        {
+            "date": 1764877099602,
+            "name": "E:\\Projects\\airline-booking-system\\auth-service\\logs\\application-2025-12-05.log",
+            "hash": "e98e4088648f0682638e23e9c011cdc0be96f4ab1a13f621f76f7ae300f6d363"
         }
     ],
     "hashType": "sha256"

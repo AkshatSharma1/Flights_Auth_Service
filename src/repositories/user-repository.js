@@ -16,6 +16,7 @@ class UserRepository {
                 });
                 throw new AppError(explanation, StatusCodes.BAD_REQUEST);
             }
+            console.log("🔥 REPORTED ERROR:", error);
             throw new AppError('Something went wrong in the User Repo', StatusCodes.INTERNAL_SERVER_ERROR);
         }
     }
