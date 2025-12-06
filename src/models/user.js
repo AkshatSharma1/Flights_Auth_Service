@@ -8,30 +8,34 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // Many-to-Many relationship with Role
       this.belongsToMany(models.Role, {
-        through: 'User_Roles'
+        through: "user_roles",
       });
     }
   }
-  User.init({
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
+  User.init(
+    {
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [3, 50], // Password length validation
+        },
+      },
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [3, 50] // Password length validation
-      }
+    {
+      sequelize,
+      modelName: "User",
+      tableName: "users",
     }
-  }, {
-    sequelize,
-    modelName: 'User',
-  });
+  );
 
   // 🔒 SECURITY HOOK: Hash password before creating
   User.beforeCreate(async (user) => {

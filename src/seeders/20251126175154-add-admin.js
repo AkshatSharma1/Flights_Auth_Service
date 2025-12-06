@@ -7,19 +7,19 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     const password = await bcrypt.hash('Admin123', +SALT_ROUNDS);
 
-    await queryInterface.bulkInsert('Users', [
+    await queryInterface.bulkInsert("users", [
       {
-        email: 'admin@airline.com',
+        email: "admin@airline.com",
         password: password,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
       {
-        email: 'flightcompany@airline.com',
+        email: "flightcompany@airline.com",
         password: password,
         createdAt: new Date(),
-        updatedAt: new Date()
-      }
+        updatedAt: new Date(),
+      },
     ]);
     
     // OPTIONAL: Link them to Roles immediately?
@@ -29,8 +29,8 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
     const Op = Sequelize.Op;
-    await queryInterface.bulkDelete('Users', {
-        email: { [Op.in]: ['admin@airline.com', 'flightcompany@airline.com'] }
+    await queryInterface.bulkDelete("users", {
+      email: { [Op.in]: ["admin@airline.com", "flightcompany@airline.com"] },
     });
   }
 };

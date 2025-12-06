@@ -3,35 +3,35 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('User_Roles', {
+    await queryInterface.createTable("user_roles", {
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       UserId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Users',
-          key: 'id'
+          model: "users",
+          key: "id",
         },
-        onDelete: 'CASCADE'
+        onDelete: "CASCADE",
       },
       RoleId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Roles',
-          key: 'id'
+          model: "roles",
+          key: "id",
         },
-        onDelete: 'CASCADE'
-      }
+        onDelete: "CASCADE",
+      },
     });
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('User_Roles');
+    await queryInterface.dropTable("user_roles");
   }
 };
